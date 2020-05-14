@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: user.Test1
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.029 s <<< FAILURE! - in user.Test1
+Test  Time elapsed: 0.021 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Hi l> but was: <Hil>
+	at user.Test1.Test(Test1.java:25)
+
+Test2  Time elapsed: 0.002 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Hi l> but was: <Hil>
+	at user.Test1.Test2(Test1.java:29)
+
