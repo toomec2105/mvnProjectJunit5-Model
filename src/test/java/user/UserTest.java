@@ -3,6 +3,7 @@ package user;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 public class UserTest {
@@ -19,6 +20,7 @@ public class UserTest {
 	}
 
 	@Test
+	@Disabled //Uncomment to see this test fail
 	public void shouldFail() {
 		assertEquals("######", user.getName());
 	}
