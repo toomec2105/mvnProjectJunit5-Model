@@ -11,6 +11,7 @@ import matura2019.Task1;
 class Task1Test {
 	private int[] twoNumberArray = {1,2};
 	private int[] fourNumberArray = {1,5,6,2};
+
 	private Task1 task1 = new Task1();
 	
 	@Test
@@ -34,4 +35,5 @@ class Task1Test {
 	void givenFourNumbers_findsFirstEven_withWhileLoop() {
 		assertEquals(6, task1.findFirstEvenWithWhileLoop(fourNumberArray));
 	}
+
 }
