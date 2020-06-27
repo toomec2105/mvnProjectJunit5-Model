@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import matura2019.Task1;
 
-class Task1Test {
+class Task1_LinearTest {
 	private int[] twoNumberArray = {1,2};
 	private int[] fourNumberArray = {1,5,6,2};
 
@@ -16,24 +16,24 @@ class Task1Test {
 	
 	@Test
 	void givenTwoNumbers_findsFirstEven_withForLoop() {
-		assertEquals(2, task1.findFirstEvenWithForLoop(twoNumberArray));
+		assertEquals(2, task1.findFirstEvenWithForLoop_Linear(twoNumberArray));
 		
 	}
 	
 	@Test
 	void givenTwoNumbers_findsFirstEven_withWhileLoop() {
-		assertEquals(2, task1.findFirstEvenWithWhileLoop(twoNumberArray));
+		assertEquals(2, task1.findFirstEvenWithWhileLoop_Linear(twoNumberArray));
 	}
 	
 	@Test
 	void givenFourNumbers_findsFirstEven_withForLoop() {
-		assertEquals(6, task1.findFirstEvenWithForLoop(fourNumberArray));
+		assertEquals(6, task1.findFirstEvenWithForLoop_Linear(fourNumberArray));
 		
 	}
 	
 	@Test
 	void givenFourNumbers_findsFirstEven_withWhileLoop() {
-		assertEquals(6, task1.findFirstEvenWithWhileLoop(fourNumberArray));
+		assertEquals(6, task1.findFirstEvenWithWhileLoop_Linear(fourNumberArray));
 	}
-
+	
 }

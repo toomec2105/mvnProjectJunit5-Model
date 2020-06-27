@@ -2,7 +2,7 @@ package matura2019;
 
 public class Task1 {
 
-	public Integer findFirstEvenWithForLoop(int[] A) {
+	public Integer findFirstEvenWithForLoop_Linear(int[] A) {
 		int w = 0;
 		int n = A.length;
 	
@@ -17,7 +17,7 @@ public class Task1 {
 		return null;
 	}
 
-	public Integer findFirstEvenWithWhileLoop(int[] A) {
+	public Integer findFirstEvenWithWhileLoop_Linear(int[] A) {
 		int i = 0;
 		int w = 0;
 	
@@ -29,5 +29,12 @@ public class Task1 {
 		
 		return w;
 	}
+
+	public Integer findFirstEven_Logarithmic(int[] twoNumberArray) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
 
 }
