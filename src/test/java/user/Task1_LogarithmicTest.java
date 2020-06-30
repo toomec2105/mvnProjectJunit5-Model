@@ -10,16 +10,25 @@ import matura2019.Task1;
 public class Task1_LogarithmicTest {
 	private int[] twoNumberArray = { 1, 2 };
 	private int[] fourNumberArray = { 1, 5, 6, 2 };
-	private int[] sevenNumberArrayWith15 = { 1, 8, 15, 17, 99, 100, 102 };
+	private int[] threeNumberArray = {1, 8, 102 };
+	private int[] exampleArray = { 5, 99, 35, 7, 111, 13, 4, 24, 4, 8 };
 	private Task1 task1 = new Task1();
 
-	@Disabled
 	@Test
-	void givenTwoNumbers_findsFirstEven() {
-		assertEquals(2, task1.findFirstEven_Logarithmic(twoNumberArray));
-
+	void findsFirstEvenIterative() {
+		assertEquals(2, task1.findFirstEven_Logarithmic_Iterative(twoNumberArray));
+		assertEquals(4, task1.findFirstEven_Logarithmic_Iterative(exampleArray));
+		assertEquals(6, task1.findFirstEven_Logarithmic_Iterative(fourNumberArray));
+		assertEquals(8, task1.findFirstEven_Logarithmic_Iterative(threeNumberArray));
 	}
-
+	
+	@Test
+	void findsFirstEvenRecursive() {
+		assertEquals(2, task1.findFirstEven_Logarithmic_Recursive(twoNumberArray, 0 , 2));
+		assertEquals(4, task1.findFirstEven_Logarithmic_Recursive(exampleArray, 0, 10));
+		assertEquals(6, task1.findFirstEven_Logarithmic_Recursive(fourNumberArray, 0, 4));
+		assertEquals(8, task1.findFirstEven_Logarithmic_Recursive(threeNumberArray, 0 ,3));
+	}
 	@Test
 	void binarySearchTest() {
 		
@@ -37,7 +46,7 @@ public class Task1_LogarithmicTest {
 			};
 		for (int[] arr : nums) {
 			
-			assertEquals(15, task1.binarySearch(arr));
+			assertEquals(15, task1.binarySearch(arr,15));
 		}
 	}
 }
