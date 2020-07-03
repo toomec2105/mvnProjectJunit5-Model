@@ -1,4 +1,4 @@
-package matura2019;
+package matura2019.part2;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -8,16 +8,16 @@ import java.util.List;
 public class Task4 {
 
 	public static void main(String[] args) {
-		/*
-		 * int actual = countPowersOf3("przyklad.txt");
-		 * System.out.println("expected 2, actual " + actual);
-		 * 
-		 * actual = countPowersOf3("oneLetter");
-		 * System.out.println("expected 1, actual " + actual);
-		 * 
-		 * actual = countPowersOf3("liczby.txt");
-		 * System.out.println("expected ?, actual " + actual);
-		 */
+		
+		  int actual = countPowersOf3("przyklad.txt");
+		  System.out.println("expected 2, actual " + actual);
+		  
+		  actual = countPowersOf3("oneLetter");
+		  System.out.println("expected 1, actual " + actual);
+		  
+		  actual = countPowersOf3("liczby.txt");
+		  System.out.println("expected ?, actual " + actual);
+		 
 		
 		// ---------------------------
 		

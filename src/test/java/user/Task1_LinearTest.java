@@ -6,7 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import matura2019.Task1;
+import matura2019.part1.Task1;
 
 class Task1_LinearTest {
 	private int[] twoNumberArray = {1,2};

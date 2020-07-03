@@ -1,0 +1,33 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f013c6dc231, pid=5642, tid=15613
+#
+# JRE version: OpenJDK Runtime Environment (14.0+36) (build 14+36-1461)
+# Java VM: OpenJDK 64-Bit Server VM (14+36-1461, mixed mode, sharing, tiered, compressed oops, g1 gc, linux-amd64)
+# Problematic frame:
+# C  [libjimage.so+0x4231]  ImageStrings::find(Endian*, char const*, int*, unsigned int)+0x71
+#
+# Core dump will be written. Default location: Core dumps may be processed with "/usr/share/apport/apport %p %s %c %d %P %E" (or dumping to /home/darek/eclipse-workspace/matura-2019/core.5642)
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:37849 -ea -javaagent:/home/darek/eclipse/jee-2020-03/eclipse/configuration/org.eclipse.osgi/405/0/.cp/lib/javaagent-shaded.jar -Dfile.encoding=UTF-8 org.eclipse.jdt.internal.junit.runner.RemoteTestRunner -version 3 -port 43733 -testLoaderClass org.eclipse.jdt.internal.junit5.runner.JUnit5TestLoader -loaderpluginname org.eclipse.jdt.junit5.runtime -classNames user.Task1_LogarithmicTest
+
+Host: Intel(R) Core(TM) i3-4330 CPU @ 3.50GHz, 4 cores, 3G, Ubuntu 19.10
+Time: Thu Jul  2 20:51:03 2020 CEST elapsed time: 12541 seconds (0d 3h 29m 1s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f00f0001800):  JavaThread "SIGTERM handler" daemon [_thread_in_vm, id=15613, stack(0x00007f010dd27000,0x00007f010de28000)]
+
+Stack: [0x00007f010dd27000,0x00007f010de28000],  sp=0x00007f010de24e80,  free space=1015k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libjimage.so+0x4231]  ImageStrings::find(Endian*, char const*, int*, unsigned int)+0x71
+C  [libjimage.so+0x4d7a]  ImageFileReader::find_location_index(char const*, unsigned long long*) const+0x3a
+C  [libjimage.so+0x5271]  JIMAGE_FindResource+0xf1
+V  [libjvm.so+0x50f4c3]

@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-import matura2019.Task1;
+import matura2019.part1.Task1;
 
 public class Task1_LogarithmicTest {
 	private int[] twoNumberArray = { 1, 2 };

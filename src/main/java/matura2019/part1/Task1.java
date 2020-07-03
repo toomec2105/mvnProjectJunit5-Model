@@ -1,4 +1,4 @@
-package matura2019;
+package matura2019.part1;
 
 public class Task1 {
 
