@@ -88,6 +88,14 @@ public class Task4 {
 		// --------------------------4.3---------------------------
 
 		/*
+		 * System.out.println("expexted [2], actual: " + Arrays.toString(getNWDs(2,
+		 * 4))); System.out.println("expexted [4,2], actual: " +
+		 * Arrays.toString(getNWDs(4, 4)));
+		 */
+		/*
+		 * System.out.println("expexted [9,3], actual: " + Arrays.toString(getNWDs(9,
+		 * 18)));
+		 * 
 		 * System.out.println( "expexted [2    ,4,6,10,2], actual: " +
 		 * getLongestSequence(Arrays.asList(3, 7, 4, 6, 10, 2, 5))); System.out.println(
 		 * "expexted [14    ,70,28,42,98], actual: " +
@@ -98,85 +106,80 @@ public class Task4 {
 		 * 
 		 * System.out.println("expexted [2    ,2,4], actual: " +
 		 * getLongestSequence(Arrays.asList(2, 3, 2, 4)));
-		 * 
-		 * System.out.println("expexted [2    ,2,2,4], actual: " +
+		 * System.out.println("expexted [9    ,9,18], actual: " +
+		 * getLongestSequence(Arrays.asList(9, 18)));
+		 * System.out.println("expexted [2 ,2,2,4], actual: " +
 		 * getLongestSequence(Arrays.asList(2, 2, 4, 3)));
-		 */
-		List<String> list = getNumberList("przyklad.txt");
-		List<Integer> nums = new ArrayList<>();
-		for (String stringNum : list) {
-			nums.add(Integer.parseInt(stringNum));
-		}
-		//System.out.println("expexted [10,    90,x, x, x, x], actual: " + getLongestSequence(nums));
-
-		list = getNumberList("liczby.txt");
-		nums.clear();
-		for (String stringNum : list) {
-			nums.add(Integer.parseInt(stringNum));
-		}
-		/*
+		 * 
+		 * List<String> list = getNumberList("przyklad.txt"); List<Integer> nums = new
+		 * ArrayList<>(); for (String stringNum : list) {
+		 * nums.add(Integer.parseInt(stringNum)); } //
+		 * System.out.println("expexted [10, 90,x, x, x, x], actual: " + //
+		 * getLongestSequence(nums));
+		 * 
+		 * list = getNumberList("liczby.txt"); nums.clear(); for (String stringNum :
+		 * list) { nums.add(Integer.parseInt(stringNum)); }
+		 * 
 		 * System.out.println("expexted [????], actual: " + getLongestSequence(nums));
 		 * System.out.println(getLongestSequence(nums).size() - 1);
 		 */
-		
-		System.out.println("expexted [74    ,31968, 56536,	30340, 55130], actual: " + getLongestSequence(Arrays.asList(13839, 31968, 56536, 30340, 55130)));
-		// 13839, 31968, 56536,	30340, 55130
+
 		// --------------------------------------------------------------------------
 
 	}
 
 	// --------------------------4.3---------------------------
-	private static Integer getNWD(int a, int b) {
-		int nwd = 1;
-		for (int i = 2; i < (a > b ? b + 1 : a + 1); i++) {
+	private static Integer[] getNWDs(int a, int b) {
+		List<Integer> nwd = new ArrayList<>();
+		int smallerNumber = a > b ? b : a;
+
+		for (int i = smallerNumber; i > 1; i--) {
+
 			if (a % i == 0 && b % i == 0) {
-				nwd *= i;
-				a /= i;
-				b /= i;
+				nwd.add(i);
 			}
 		}
 
-		return nwd;
+		return nwd.toArray(new Integer[] {});
 	}
 
-	private static List<Integer> getLongestSequence(List<Integer> nums) {
-		List<Integer> result = new ArrayList<>();
+	private static List<Integer> getLongestSequence(List<Integer> numbers) {
+		List<Integer> longestSequence = new ArrayList<>();
 
-		for (int i = 0; i < nums.size() - 1; i++) {
-			int num1 = nums.get(i);
-			int num2 = nums.get(i + 1);
-			
-			if(num1 == 31968) {
-				System.out.println();
-			}
-			
-			int nwd = getNWD(num1, num2);
-			if (nwd == 1) {
+		for (int i = 0; i < numbers.size() - 1; i++) {
+
+			int num1 = numbers.get(i);
+			int num2 = numbers.get(i + 1);
+			List<Integer> nwds = Arrays.asList(getNWDs(num1, num2));
+
+			if (nwds.size() == 0) {
 				continue;
 			}
-			List<Integer> candidateList = new ArrayList<>();
-			candidateList.add(nwd);
-			candidateList.add(num1);
-			candidateList.add(num2);
+			
+			for (Integer currCommonDenom : nwds) {
 
-			if (i >= nums.size() - 2) {
-				result = result.size() > candidateList.size() ? result : candidateList;
-			} else {
-				for (int j = i + 2; j < nums.size(); j++) {
-					int next = nums.get(j);
-					if (next % nwd == 0) {
+				List<Integer> candidateList = new ArrayList<>(Arrays.asList(currCommonDenom, num1, num2));
+
+				if (longestSequence.size() == 0) {
+					longestSequence = candidateList;
+				}
+
+				for (int k = i + 2; k < numbers.size(); k++) {
+					int next = numbers.get(k);
+
+					if (next % currCommonDenom == 0) {
 						candidateList.add(next);
+
+						if (candidateList.size() > longestSequence.size()) {
+							longestSequence = candidateList;
+						}
 					} else {
-						result = result.size() > candidateList.size() ? result : candidateList;
 						break;
 					}
 				}
-
 			}
-			result = result.size() == 0 ? candidateList : result;
 		}
-
-		return result;
+		return longestSequence;
 	}
 
 //------------------- 4.2--------------------------
