@@ -12,38 +12,33 @@ public class Task4 {
 	public static void main(String[] args) {
 
 		// -------- 4.1-------------------
+
 		/*
-		 * int actual = countPowersOf3("przyklad.txt");
-		 * System.out.println("expected 2, actual " + actual);
+		 * System.out.println("expected 1, actual " +
+		 * countPowersOf3(getIntegerList("./4.1/oneLetter")));
 		 * 
-		 * actual = countPowersOf3("./4.1/oneLetter");
-		 * System.out.println("expected 1, actual " + actual);
+		 * System.out.println("expected 2, actual " +
+		 * countPowersOf3(getIntegerList("przyklad.txt")));
 		 * 
-		 * actual = countPowersOf3("liczby.txt");
-		 * System.out.println("expected ?, actual " + actual);
+		 * System.out.println("expected ?, actual " +
+		 * countPowersOf3(getIntegerList("liczby.txt")));
 		 */
 
 		// ---------- 4.2-----------------
 
-		/*
-		 * ArrayList<String> actual = new ArrayList<>(); actual =
-		 * checkFactorials("przyklad.txt"); System.out.println("expected true, actual "
-		 * + actual.contains("145")); System.out.println("expected 1, actual " +
-		 * actual.size()); System.out.println("expected 145, actual " + actual.get(0));
-		 * 
-		 * actual = checkFactorials("liczby.txt");
-		 * 
-		 * // all 3 metods print: expected: [2, 145, 1, 40585], actual: [2, 145, 1,
-		 * 40585] System.out.println("expected: [2, 145, 1, 40585], actual: " +
-		 * actual.toString());
-		 * System.out.println("expected: [2, 145, 1, 40585], actual: " + actual);
-		 * System.out.println("expected: [2, 145, 1, 40585], actual: " +
-		 * Arrays.toString(actual.toArray()));
-		 * 
-		 * //prints: expected: [2, 145, 1, 40585], actual: [Ljava.lang.Object;@f6f4d33
-		 * System.out.println("expected: [2, 145, 1, 40585], actual: " +
-		 * actual.toArray());
-		 */
+		
+		
+	
+		System.out.println("expected true, actual " + checkFactorials(getStringList("przyklad.txt")).contains("145"));
+		System.out.println("expected 1, actual " + checkFactorials(getStringList("przyklad.txt")).size());
+		System.out.println("expected 145, actual " + checkFactorials(getStringList("przyklad.txt")).get(0));
+		
+		System.out.println("expected: [2, 145, 1, 40585], actual: " + checkFactorials(getStringList("liczby.txt")).toString());
+		System.out.println("expected: [2, 145, 1, 40585], actual: " + checkFactorials(getStringList("liczby.txt")));
+		System.out.println("expected: [2, 145, 1, 40585], actual: " + Arrays.toString(checkFactorials(getStringList("liczby.txt")).toArray()));
+
+		// prints: expected: [2, 145, 1, 40585], actual: [Ljava.lang.Object;@f6f4d33
+		System.out.println("expected: [2, 145, 1, 40585], actual: " + checkFactorials(getStringList("liczby.txt")).toArray());
 
 		// ---------- 4.2 Darek-----------------
 		/*
@@ -92,40 +87,42 @@ public class Task4 {
 		 * 4))); System.out.println("expexted [4,2], actual: " +
 		 * Arrays.toString(getNWDs(4, 4)));
 		 */
-		/*
-		 * System.out.println("expexted [9,3], actual: " + Arrays.toString(getNWDs(9,
-		 * 18)));
-		 * 
-		 * System.out.println( "expexted [2    ,4,6,10,2], actual: " +
-		 * getLongestSequence(Arrays.asList(3, 7, 4, 6, 10, 2, 5))); System.out.println(
-		 * "expexted [14    ,70,28,42,98], actual: " +
-		 * getLongestSequence(Arrays.asList(5, 70, 28, 42, 98, 1)));
-		 * 
-		 * System.out.println("expexted [2    ,2,2,4], actual: " +
-		 * getLongestSequence(Arrays.asList(2, 2, 4)));
-		 * 
-		 * System.out.println("expexted [2    ,2,4], actual: " +
-		 * getLongestSequence(Arrays.asList(2, 3, 2, 4)));
-		 * System.out.println("expexted [9    ,9,18], actual: " +
-		 * getLongestSequence(Arrays.asList(9, 18)));
-		 * System.out.println("expexted [2 ,2,2,4], actual: " +
-		 * getLongestSequence(Arrays.asList(2, 2, 4, 3)));
-		 * 
-		 * List<String> list = getNumberList("przyklad.txt"); List<Integer> nums = new
-		 * ArrayList<>(); for (String stringNum : list) {
-		 * nums.add(Integer.parseInt(stringNum)); } //
-		 * System.out.println("expexted [10, 90,x, x, x, x], actual: " + //
-		 * getLongestSequence(nums));
-		 * 
-		 * list = getNumberList("liczby.txt"); nums.clear(); for (String stringNum :
-		 * list) { nums.add(Integer.parseInt(stringNum)); }
-		 * 
-		 * System.out.println("expexted [????], actual: " + getLongestSequence(nums));
-		 * System.out.println(getLongestSequence(nums).size() - 1);
-		 */
+
+		System.out.println("expexted [9,3], actual: " + Arrays.toString(getNWDs(9, 18)));
+
+		System.out.println(
+				"expexted [2    ,4,6,10,2], actual: " + getLongestSequence(Arrays.asList(3, 7, 4, 6, 10, 2, 5)));
+		System.out.println(
+				"expexted [14    ,70,28,42,98], actual: " + getLongestSequence(Arrays.asList(5, 70, 28, 42, 98, 1)));
+
+		System.out.println("expexted [2    ,2,2,4], actual: " + getLongestSequence(Arrays.asList(2, 2, 4)));
+
+		System.out.println("expexted [2    ,2,4], actual: " + getLongestSequence(Arrays.asList(2, 3, 2, 4)));
+		System.out.println("expexted [9    ,9,18], actual: " + getLongestSequence(Arrays.asList(9, 18)));
+		System.out.println("expexted [2 ,2,2,4], actual: " + getLongestSequence(Arrays.asList(2, 2, 4, 3)));
+
+		System.out.println("expexted [10, 90,x, x, x, x], actual: " + //
+				getLongestSequence(getIntegerList("przyklad.txt")));
+
+		System.out.println("expexted [????], actual: " + getLongestSequence(getIntegerList("liczby.txt")));
+		System.out.println(getLongestSequence(getIntegerList("liczby.txt")).size() - 1);
 
 		// --------------------------------------------------------------------------
 
+	}
+
+	private static List<Integer> getIntegerList(String path) {
+		List<String> strings = new ArrayList<String>();
+		try {
+			strings = Files.readAllLines(Paths.get(path));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		List<Integer> nums = new ArrayList<>();
+		for (String stringNum : strings) {
+			nums.add(Integer.parseInt(stringNum));
+		}
+		return nums;
 	}
 
 	// --------------------------4.3---------------------------
@@ -155,7 +152,7 @@ public class Task4 {
 			if (nwds.size() == 0) {
 				continue;
 			}
-			
+
 			for (Integer currCommonDenom : nwds) {
 
 				List<Integer> candidateList = new ArrayList<>(Arrays.asList(currCommonDenom, num1, num2));
@@ -183,15 +180,10 @@ public class Task4 {
 	}
 
 //------------------- 4.2--------------------------
-	private static ArrayList<String> checkFactorials(String path) {
-		List<String> numbers = null;
+	private static List<String> checkFactorials(List<String> strings) {
+		List<String> numbers = strings;
 		ArrayList<String> output = new ArrayList<>();
-		try {
-			numbers = Files.readAllLines(Paths.get(path));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
+	
 		for (String num : numbers) {
 			int digit = 0;
 			int sum = 0;
@@ -214,19 +206,12 @@ public class Task4 {
 	}
 
 //---------------------4.1------------------------
-	private static int countPowersOf3(String path) {
+	private static int countPowersOf3(List<Integer> nums) {
 
-		List<String> numbers = null;
+		List<Integer> numbers = new ArrayList<>(nums);
 		int counter = 0;
 
-		try {
-			numbers = Files.readAllLines(Paths.get(path));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-
-		for (String number : numbers) {
-			Integer num = Integer.parseInt(number);
+		for (Integer num : numbers) {
 
 			while (num % 3 == 0) {
 				num /= 3;
@@ -243,7 +228,7 @@ public class Task4 {
 	// ------------------- 4.2 Darek---------------------
 	private static String[] getAllEqual(String path) {
 
-		List<String> input = getNumberList(path);
+		List<String> input = getStringList(path);
 		List<String> output = new ArrayList<String>();
 
 		for (String stringNum : input) {
@@ -281,7 +266,7 @@ public class Task4 {
 
 	}
 
-	private static List<String> getNumberList(String path) {
+	private static List<String> getStringList(String path) {
 
 		try {
 			return Files.readAllLines(Paths.get(path));
